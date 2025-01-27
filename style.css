@@ -211,6 +211,7 @@ button:hover {
         left: 0;
         top: 0;
         width: 100%;
+        height: auto;
         font-size: 10px; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
     }
     .month {
@@ -220,12 +221,11 @@ button:hover {
         width: 30%; /* Ajustar el ancho de cada mes para que quepan más en una página */
         margin: 0.5%; /* Espacio entre los meses */
         vertical-align: top; /* Alinear los meses en la parte superior */
-        }
+    }
     .days {
         display: grid;
         grid-template-columns: repeat(7, 1fr); /* Crear una cuadrícula con 7 columnas */
-        
-      }
+    }
     .day, .day.header {
         width: auto; /* Ajustar el ancho automáticamente */
         box-sizing: border-box;
