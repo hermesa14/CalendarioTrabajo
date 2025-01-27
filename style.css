@@ -218,9 +218,17 @@ button:hover {
         page-break-inside: avoid;
         break-inside: avoid;
         display: inline-block; /* Mostrar los meses en línea */
-        width: 30%; /* Ajustar el ancho de cada mes para que quepan más en una página */
+        width: 20%; /* Ajustar el ancho de cada mes para que quepan más en una página */
+        height: auto;
         margin: 0.5%; /* Espacio entre los meses */
         vertical-align: top; /* Alinear los meses en la parte superior */
+    }
+    .month h3 {
+        margin: 0;
+        padding: 5px;
+        background-color: #f11818;
+        color: #0a0a0a;
+        border-radius: 5px;
     }
     .days {
         display: grid;
