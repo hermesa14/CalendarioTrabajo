@@ -5,7 +5,7 @@
 }
 header{
     height: 300px;
-    width: 90%;
+    width: 95%;
     text-align: justify;
     border-radius: 50px;
     background-image: url('imagen/header.png'); 
@@ -19,41 +19,141 @@ h1{
     padding-top: 30px;
 }
 body {
+    width: 100%;
     font-family: Arial, sans-serif;
     background: rgb(18,173,156);
     background: linear-gradient(190deg, rgba(18,173,156,1) 5%, rgba(57,196,183,1) 28%, rgba(163,183,226,0.9836309523809523) 100%);
     color: #0d161d;
     padding: 20px;
+    padding-right: 3px;
 }
+.cabecera {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 20px; /* Espacio entre columnas */
+    width: 90%;
+    padding-bottom: 30px;
+    padding-top: 60px;
+  }
+  
+  .Generar, .Actualizar {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Dos columnas: una para el label, otra para el input */
+    gap: 10px; /* Espacio entre elementos en cada sección */
+    align-items: center; /* Centra verticalmente los elementos dentro de las celdas */
+  }
+  
+  .Generar label,
+  .Actualizar label {
+    grid-column: 1 / 2; /* Los labels ocupan la primera columna */
+    font-size: 14px; /* Ajusta el tamaño de la fuente del label */
+  }
+  
+  .Generar input,
+  .Generar select,
+  .Actualizar input,
+  .Actualizar button {
+    grid-column: 2 / 3; /* Los inputs, selects y botones ocupan la segunda columna */
+    font-size: 14px; /* Ajusta el tamaño de la fuente del input y select */
+    width: auto; /* Permite que los inputs se ajusten automáticamente a su contenido */
+    padding: 5px; /* Reduce el padding interno de los inputs */
+  }
+  
+  .Generar button,
+  .Actualizar button {
+    grid-column: 1 / 3; /* Los botones ocupan ambas columnas */
+    justify-self: center; /* Alinea el botón al inicio de la celda */
+    font-size: 14px; /* Ajusta el tamaño de la fuente del botón */
+    padding: 10px 20px; /* Ajusta el tamaño y padding del botón */
+  }
+  
+
+#legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    padding: 3px;
+    background-color: white;
+    width: 85%;
+    
+    border-radius: 30px;
+}
+
+#legend h4 {
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    gap: 10px;
+
+ }
+
 
 .calendar-container {
     background: rgb(18,173,156);
     background: linear-gradient(190deg, rgba(18,173,156,1) 5%, rgba(57,196,183,1) 28%, rgba(180,205,153,0.9836309523809523) 100%);
-    padding: 20px;
+    padding: 1%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width:90%;
-    margin: 20px;
+    width:90%;
+    margin: 10px 10px;
     display: grid;
-    grid-template-columns: 0fr 2fr;
-    gap: 20px;
+    position: relative;
 }
-.cabecera {
-    display: inline-block;
-    background: rgb(18,173,156);
-    background: linear-gradient(190deg, rgba(18,173,156,1) 5%, rgba(57,196,183,1) 28%, rgba(180,205,153,0.9836309523809523) 100%);
-    max-width: 90%;
-    height: 200px;
-    border: 10px;
-    border-radius: 30px;
-    box-shadow:  20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
-    margin: 20px;
+#calendar {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    width: 90%;
+}
+.month {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 90%;
+        
+}
+.month h3 {
+    padding-right: 5px;
+    background-color: #8af118;
+    color: #0a0a0a;
+    border-radius: 5px;
+    width: 60%;
+   
+}
+.days {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    padding: 3px;
+
+}
+
+.day {
+    font-size: 0.8rem;
+    width: 60%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.day.header {
+    width: 60%;
+    font-weight: bold;
+    font-size: 0.8rem;
+    background-color: #f3f3f3;
     text-align: left;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    align-items: end;
-    
+    gap: 3px;
 }
+
 label {
     font-family: "Lexend Giga", serif;;
     font-weight: bold;
@@ -61,41 +161,12 @@ label {
     padding: 20px;
   
 }
-#legend {
-    display:flex;
-    grid-column: 2;
-    align-items:first baseline;
-    gap: 10px;
-    margin-left: 50px;
-    padding: 30px;
-    background-color: white;
-    width: 85%;
-    border-radius: 30px;
-  
-}
-
-#legend p {
-    display: flex;
-    font-size: 15pt;
-    text-align: center;
-    align-items: center;
-    gap: 20px;
-    margin-left: 5px 0;
- }
 
 i{
     width: 30px;
     height: 30px;
 }
-input[type="number"],
-input[type="date"],
-select {
-    width: 150px;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+
 
 button {
     background-color:#8af118;
@@ -113,59 +184,9 @@ button:hover {
     background-color: #0056b3;
 }
 
-#calendar {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-    margin: 0%;
-}
 
-.month {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #fff;
-}
 
-.month h3 {
-    margin: 0;
-    padding: 10px;
-    background-color: #8af118;
-    color: #0a0a0a;
-    border-radius: 5px;
-    width: 95%;
-}
 
-.days {
-    width: 15px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    text-align: center;
-    padding: 3px;
-
-}
-
-.day {
-    width: 15px;
-    height: 30px;
-    padding: 8px;
-    border-radius: 5px;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-}
-
-.day.header {
-    width: 23px;
-    font-weight: bold;
-    font-size: small;
-    background-color: #f3f3f3;
-    text-align: left;
-    gap: 3px;
-}
 
 .morning {
     background-color: #F6FF33;
@@ -212,13 +233,13 @@ button:hover {
         top: 0;
         width: 100%;
         height: auto;
-        font-size: 10px; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
+        font-size: 8px; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
     }
     .month {
         page-break-inside: avoid;
         break-inside: avoid;
         display: inline-block; /* Mostrar los meses en línea */
-        width: 20%; /* Ajustar el ancho de cada mes para que quepan más en una página */
+        width: 23%; /* Ajustar el ancho de cada mes para que quepan más en una página */
         height: auto;
         margin: 0.5%; /* Espacio entre los meses */
         vertical-align: top; /* Alinear los meses en la parte superior */
@@ -238,7 +259,11 @@ button:hover {
         width: auto; /* Ajustar el ancho automáticamente */
         box-sizing: border-box;
     }
+    .icon {
+        font-size: 10px; /* Reducir el tamaño de los iconos */
+    }
 }
+
 /* Estilo para dispositivos móviles */
 @media (max-width: 600px) {
     header {

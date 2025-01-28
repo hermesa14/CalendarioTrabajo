@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
    const workingHolidaysInput = document.getElementById('working-holidays');
    const generateScheduleButton = document.getElementById('generate-schedule');
    const updateCalendarButton = document.getElementById('update-calendar');
-   const exportToPdfButton = document.getElementById('export-to-pdf');
    const exportToExcelButton = document.getElementById('export-to-excel');
 
    // Inicializa Flatpickr para los campos de fecha
@@ -21,8 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
    generateScheduleButton.addEventListener('click', generateSchedule);
    updateCalendarButton.addEventListener('click', updateSpecialDays);
-   exportToPdfButton.addEventListener('click', exportToPdf);
    exportToExcelButton.addEventListener('click', exportToExcel);
+
+   document.getElementById('print-calendar').addEventListener('click', function() {
+       window.print();
+   });
 
    function createCalendar(year) {
        calendarContainer.innerHTML = '';
@@ -141,30 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
        });
    }
 
-   document.getElementById('export-to-pdf').addEventListener('click', exportToPdf);
 
-   function exportToPdf() {
-       const calendarElement = document.getElementById('calendar');
-       const year = document.getElementById('year-select').value;
-       
-       // Crear un contenedor temporal para el contenido del PDF
-       const pdfContent = document.createElement('div');
-       pdfContent.innerHTML = `
-           <h1 style="text-align: center;">Calendario de trabajo del año ${year}</h1>
-           ${calendarElement.innerHTML}
-       `;
-       
-       const opt = {
-           margin:       0.5,
-           filename:     `calendario_${year}.pdf`,
-           image:        { type: 'jpeg', quality: 0.98 },
-           html2canvas:  { scale: 1 },
-           jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
-       };
-   
-       // Generar el PDF
-       html2pdf().from(pdfContent).set(opt).save();
-   }
+
    function exportToExcel() {
        const table = document.createElement('table');
        table.border = '1';
