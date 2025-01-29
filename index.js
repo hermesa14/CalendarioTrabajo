@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
    function createCalendar(year) {
        calendarContainer.innerHTML = '';
+
+       // Set the title with the selected year
+       const title = document.getElementById('calendar-title');
+       title.textContent = `Calendario de Trabajo año ${year}`;
+
        const months = [
            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'

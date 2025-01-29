@@ -113,6 +113,12 @@ body {
     margin-top: 20px;
     width: 90%;
 }
+#calendar-title {
+    padding: 1px 1px 1px 1px;
+    grid-column:  2;
+    font-size: 2em;
+    text-align: center;
+   }
 .month {
     border: 1px solid #ccc;
     padding: 10px;
@@ -243,15 +249,18 @@ button:hover {
         width: 100%;
         height: auto;
         font-size: 0.8em; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
-        padding: 40px 1px 2px 20px;
+        padding: 10px 1px 2px 20px;
     }
+    #calendar-title {
+        visibility: visible;
+        font-size: 1em;
+        }
     .month {
         border: 1px solid #ccc;
         gap: 1px;
         border-radius: 10px;
         background-color: #fff;
-        width: 90%;
-           
+        width: 90%;          
     }
     .month h3 {
         padding-right: 3px;
