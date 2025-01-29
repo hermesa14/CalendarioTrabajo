@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const workingHolidaysInput = document.getElementById('working-holidays');
    const generateScheduleButton = document.getElementById('generate-schedule');
    const updateCalendarButton = document.getElementById('update-calendar');
-   const exportToExcelButton = document.getElementById('export-to-excel');
+
 
    // Inicializa Flatpickr para los campos de fecha
    flatpickr("#closing-days, #working-holidays", {
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
    generateScheduleButton.addEventListener('click', generateSchedule);
    updateCalendarButton.addEventListener('click', updateSpecialDays);
-   exportToExcelButton.addEventListener('click', exportToExcel);
 
-   document.getElementById('print-calendar').addEventListener('click', function() {
+
+   document.getElementById('btnprint-calendar').addEventListener('click', function() {
        window.print();
    });
 
@@ -145,48 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   function exportToExcel() {
-       const table = document.createElement('table');
-       table.border = '1';
 
-       document.querySelectorAll('.month').forEach(monthDiv => {
-           const monthRow = table.insertRow();
-           const monthCell = monthRow.insertCell();
-           monthCell.colSpan = 7;
-           monthCell.textContent = monthDiv.querySelector('h3').textContent;
-           monthCell.style.textAlign = 'center';
-           monthCell.style.fontWeight = 'bold';
-           monthCell.style.backgroundColor = '#007bff';
-           monthCell.style.color = '#fff';
-
-           const daysHeaderRow = table.insertRow();
-           monthDiv.querySelectorAll('.day.header').forEach(dayHeader => {
-               const headerCell = daysHeaderRow.insertCell();
-               headerCell.textContent = dayHeader.textContent;
-               headerCell.style.fontWeight = 'bold';
-               headerCell.style.backgroundColor = '#f3f3f3';
-           });
-
-           let weekRow;
-           monthDiv.querySelectorAll('.day').forEach((day, index) => {
-               if (index % 7 === 0) {
-                   weekRow = table.insertRow();
-               }
-               const dayCell = weekRow.insertCell();
-               dayCell.innerHTML = day.innerHTML;
-               dayCell.style.textAlign = 'center';
-           });
-       });
-
-       const data = table.outerHTML;
-       const blob = new Blob([data], { type: 'application/vnd.ms-excel' });
-       const url = window.URL.createObjectURL(blob);
-       const a = document.createElement('a');
-       a.href = url;
-       a.download = `Calendario_${yearSelect.value}.xls`;
-       a.click();
-       window.URL.revokeObjectURL(url);
-   }
 
    createCalendar(parseInt(yearSelect.value));
 });

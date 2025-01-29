@@ -4,15 +4,20 @@
     margin: 0;
 }
 header{
+width: 100%;
+height: 300px;
+display:contents;
+}
+.top1{
     height: 300px;
     width: 95%;
     text-align: justify;
     border-radius: 50px;
-    background-image: url('imagen/header.png'); 
+    background-image: url('imagen/header.jpg'); 
     background-size:cover; /* Ajusta esto según tus necesidades */
-    
-
-}
+    color: #727D73;
+    padding-bottom: 30px;
+ }
 h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
@@ -21,9 +26,8 @@ h1{
 body {
     width: 100%;
     font-family: Arial, sans-serif;
-    background: rgb(18,173,156);
-    background: linear-gradient(190deg, rgba(18,173,156,1) 5%, rgba(57,196,183,1) 28%, rgba(163,183,226,0.9836309523809523) 100%);
-    color: #0d161d;
+    background-color: ghostwhite;
+    color: #727D73;
     padding: 20px;
     padding-right: 3px;
 }
@@ -91,8 +95,8 @@ body {
 
 
 .calendar-container {
-    background: rgb(18,173,156);
-    background: linear-gradient(190deg, rgba(18,173,156,1) 5%, rgba(57,196,183,1) 28%, rgba(180,205,153,0.9836309523809523) 100%);
+    background: rgb(255,253,236);
+    background: linear-gradient(190deg, rgba(255,253,236,1) 5%, rgba(229,217,242,1) 28%, rgba(162,148,249,1) 100%);
     padding: 1%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -223,44 +227,53 @@ button:hover {
 @media print {
     body * {
         visibility: hidden;
+
+    }
+    #btnprint-calendar{
+        visibility: hidden;
     }
     .print-calendar, .print-calendar * {
         visibility: visible;
     }
+
     .print-calendar {
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: auto;
-        font-size: 8px; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
+        font-size: 0.8em; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
+        padding: 40px 1px 2px 20px;
     }
     .month {
-        page-break-inside: avoid;
-        break-inside: avoid;
-        display: inline-block; /* Mostrar los meses en línea */
-        width: 23%; /* Ajustar el ancho de cada mes para que quepan más en una página */
-        height: auto;
-        margin: 0.5%; /* Espacio entre los meses */
-        vertical-align: top; /* Alinear los meses en la parte superior */
+        border: 1px solid #ccc;
+        gap: 1px;
+        border-radius: 10px;
+        background-color: #fff;
+        width: 90%;
+           
     }
     .month h3 {
-        margin: 0;
-        padding: 5px;
-        background-color: #f11818;
+        padding-right: 3px;
+        background-color: #8af118;
         color: #0a0a0a;
         border-radius: 5px;
+        width: 60%;
+     
     }
     .days {
         display: grid;
         grid-template-columns: repeat(7, 1fr); /* Crear una cuadrícula con 7 columnas */
+        gap: 2px;
     }
     .day, .day.header {
         width: auto; /* Ajustar el ancho automáticamente */
         box-sizing: border-box;
+        gap: 3px;
+        padding: 3px 1px 2px 1px;
     }
     .icon {
-        font-size: 10px; /* Reducir el tamaño de los iconos */
+        font-size: 1.1em; /* Reducir el tamaño de los iconos */
     }
 }
 
