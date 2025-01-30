@@ -97,7 +97,7 @@ body {
 .calendar-container {
     background: rgb(255,253,236);
     background: linear-gradient(190deg, rgba(255,253,236,1) 5%, rgba(229,217,242,1) 28%, rgba(162,148,249,1) 100%);
-    padding: 1%;
+    padding: 1px 0px 1px 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width:90%;
@@ -108,13 +108,13 @@ body {
 #calendar {
     grid-column: span 2;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 0.5fr 1fr 1fr;
     gap: 10px;
     margin-top: 20px;
     width: 90%;
 }
 #calendar-title {
-    padding: 1px 1px 1px 1px;
+    padding: 1px 0px 0px 1px;
     grid-column:  2;
     font-size: 2em;
     text-align: left;
@@ -236,11 +236,15 @@ button:hover {
         visibility: hidden;
 
     }
+    #saveAsImage{
+        visibility: hidden;
+    }
     #btnprint-calendar{
         visibility: hidden;
     }
     .print-calendar, .print-calendar * {
         visibility: visible;
+        transform-origin: top left;
     }
 
     .print-calendar {
@@ -249,14 +253,14 @@ button:hover {
         top: 0;
         width: 100%;
         height: auto;
-        font-size: 0.4em; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
+        font-size: 0.2em; /* Reducir el tamaño de la fuente para ajustar más contenido en una página */
         padding: 8px 1px 2px 20px;
         margin-bottom: 0px;
         border-bottom: white;
     }
     #calendar-title {
         visibility: visible;
-        font-size: 1.9em;
+        font-size: 3em;
         margin-bottom: 0px;
         }
     .month {
@@ -264,10 +268,11 @@ button:hover {
         gap: 1px;
         border-radius: 10px;
         background-color: #fff;
-        width: 90%;          
+        width: 90%;
+        padding-bottom: 1px;          
     }
     .month h3 {
-        border-radius: 5px;
+        border-radius: 3px;
         width: 80%; 
     }
     .days {
@@ -282,8 +287,12 @@ button:hover {
         padding: 3px 1px 2px 1px;
     }
     .icon {
-        font-size: 0.8em; /* Reducir el tamaño de los iconos */
+        font-size: 0.7em; /* Reducir el tamaño de los iconos */
     }
+
+
+
+
 }
 
 /* Estilo para dispositivos móviles */
