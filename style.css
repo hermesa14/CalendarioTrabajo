@@ -13,7 +13,7 @@ display:contents;
     width: 95%;
     text-align: justify;
     border-radius: 50px;
-    background-image: url('imagen/header.jpg'); 
+    background-image: url('imagen/839.png'); 
     background-size:cover; /* Ajusta esto según tus necesidades */
     color: #727D73;
     padding-bottom: 30px;
@@ -95,8 +95,8 @@ body {
 
 
 .calendar-container {
-    background: rgb(255,253,236);
-    background: linear-gradient(190deg, rgba(255,253,236,1) 5%, rgba(229,217,242,1) 28%, rgba(162,148,249,1) 100%);
+    background: rgb(251,203,69);
+    background: linear-gradient(180deg, rgba(251,203,69,1) 0%, rgba(240,235,235,1) 45%, rgba(255,197,69,1) 77%);
     padding: 1px 0px 1px 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -121,7 +121,7 @@ body {
     padding-left: 20%;
    }
 .month {
-    border: 1px solid #ccc;
+    border: 1px solid #ffc545;
     padding: 10px;
     border-radius: 10px;
     background-color: #fff;
@@ -130,7 +130,7 @@ body {
 }
 .month h3 {
     padding-right: 5px;
-    background-color: #8af118;
+    background-color:#ffc545;
     color: #0a0a0a;
     border-radius: 5px;
     width: 60%;
@@ -180,7 +180,7 @@ i{
 
 
 button {
-    background-color:#8af118;
+    background-color:#f0f0f0;
     color: #0a0a0a;
     border: none;
     padding: 20px 20px;
